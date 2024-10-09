@@ -9,7 +9,7 @@ import java.util.List;
 
 public class BankStatementAnalyzer {
 	private static final String RESOURCES = "src/main/resources/";
-	/*     REFATORADO
+	
 	  private static final BankStatementCSVParser bankStatementParser = new BankStatementCSVParser();
 	
 	public static void main(final String... args) throws IOException {
@@ -19,7 +19,7 @@ public class BankStatementAnalyzer {
 		
 		final List<BankTransaction> bankTransactions = bankStatementParser.parseLinesFrom(lines);
 		final BankStatementProcessor bankStatementProcessor = new BankStatementProcessor(bankTransactions);
-		*/
+	}	
 	
 	public void analyze(final String fileName, final BankStatementParser bankStatementParser) throws IOException {
 		final Path path = Paths.get(RESOURCES + fileName);

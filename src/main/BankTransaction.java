@@ -46,6 +46,7 @@ public class BankTransaction {
 	public int hasCode() {
 		return Objects.hash(date, amount, description);
 	}
+	
 	public static double calculateTotalAmount(final List<BankTransaction> bankTransactions) {
 		double total = 0d;
 		for(final BankTransaction bankTransaction: bankTransactions) {
@@ -53,7 +54,7 @@ public class BankTransaction {
 		}
 		return total;
 	}
-	public static List<BankTransaction> selectInMonth(final List<BankTransaction> bankTransactions, final Month month){
+	public static List<BankTransaction> selectInMonth(final List<BankTransaction> bankTransactions, final Month month) {
 		final List<BankTransaction> bankTransactionsInMonth = new ArrayList<>();
 		for(final BankTransaction bankTransaction: bankTransactions) {
 			if(bankTransaction.getDate().getMonth() == month) {
@@ -62,5 +63,20 @@ public class BankTransaction {
 		}
 		return bankTransactionsInMonth;	
 }
-	
+	/*
+	public class BankTransactionParser{
+		public BankTransaction parseFromCSV(final String line) {
+			//...
+			throw new UnsupportedOperationException();
+		}
+		public BankTransaction parseFromJSON(final String line) {
+			//...
+			throw new UnsupportedOperationException();
+		}
+		public BankTransaction parseFromXML(final String line) {
+			//...
+			throw new UnsupportedOperationException();
+		}
+	}
+	*/
 }
